@@ -19,18 +19,18 @@ class ReferenceLoader:
     #this method simplifies to DEL, INS, INV, etc.
     def simplify_sv_name(self, name):
 	simplified_name = name.upper()
-	if("_" in name):
-		full_name = name.split("_")
+	if("_" in simplified_name):#for simplifying the original correct_svs.txt file
+		full_name = simplified_name.split("_")
 		simplified_name = full_name[1]
-	elif("DEL" in name):
+	elif("DEL" in simplified_name):
 		simplified_name = "DEL"
-	elif("INS" in name):
+	elif("INS" in simplified_name):
 		simplified_name = "INS"
-	elif("DUP" in name):
+	elif("DUP" in simplified_name):
 		simplified_name = "DUP"
-	elif("INV" in name):
+	elif("INV" in simplified_name):
 		simplified_name = "INV"
-	elif("CNV" in name or "COPY" in name):
+	elif("CNV" in simplified_name or "COPY" in simplified_name):
 		simplified_name = "CNV"
 	return simplified_name
 
